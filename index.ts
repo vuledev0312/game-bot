@@ -9,10 +9,10 @@ const token = '1973201437:AAHOFK8V2P0YbhLLLisZFcqLFkVri8dLK0E';
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
 
-
+const gameName = "trexjump";
 
 bot.onText(/\/start/, function onPhotoText(msg:any) {
-  console.log(msg);
+    bot.sendGame(msg.from.id,gameName);
 });
 bot.on('message', (msg:any) => {
   const chatId = msg.chat.id;
